@@ -1,3 +1,5 @@
+package Homework;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -107,13 +109,13 @@ public class WebAutomationFormClass {
     @Test(priority = 17)
     public void clickSubmitForm() throws InterruptedException{
         driver.findElement(By.id("submit-btn")).click();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
     }
 
     @Test(priority = 18)
     public void clickValidateButton() throws InterruptedException{
         driver.findElement(By.id("success-alert-btn")).click();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
 
     @AfterTest
