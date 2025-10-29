@@ -16,6 +16,7 @@ public class LoginPage {
     @FindBy(id = "login-email") WebElement email_id;
     @FindBy(id = "login-password") WebElement password_id;
     @FindBy(id = "login-submit") WebElement loginsubmit_id;
+
     public  LoginPage(WebDriver driver) {
         this.driver = driver;
     }
