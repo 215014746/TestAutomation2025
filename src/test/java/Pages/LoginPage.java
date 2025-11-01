@@ -20,18 +20,22 @@ public class LoginPage {
     public  LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void verifyLoginpageIsDisplayed(){
+    public void verifyLoginpageIsDisplayed()throws InterruptedException{
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(loginpagetitle_id));
         loginpagetitle_id.isDisplayed();
+        Thread.sleep(2000);
     }
-    public void enterEmail(String email){
+    public void enterEmail(String email)throws InterruptedException{
         email_id.sendKeys(email);
+        Thread.sleep(2000);
     }
-    public void enterPassword(String password){
+    public void enterPassword(String password)throws InterruptedException{
         password_id.sendKeys(password);
+        Thread.sleep(2000);
     }
-    public void loginButtonSubmit(){
+    public void loginButtonSubmit()throws InterruptedException{
         loginsubmit_id.click();
+        Thread.sleep(2000);
     }
 
 }

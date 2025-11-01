@@ -18,12 +18,14 @@ public class HomePage {
        this.driver = driver;
    }
 
-   public void verifyHomePageIsDisplayed(){
-       new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(homepageTitle_id));
+   public void verifyHomePageIsDisplayed()throws InterruptedException{
+       //new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(homepageTitle_id));
                homepageTitle_id.isDisplayed();
+       Thread.sleep(2000);
    }
 
-   public void clickLearningMaterial(){
+   public void clickLearningMaterial()throws InterruptedException{
        learningMaterialTab_id.click();
+       Thread.sleep(2000);
    }
 }

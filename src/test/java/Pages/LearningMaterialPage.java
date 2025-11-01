@@ -20,11 +20,14 @@ public class LearningMaterialPage {
         this.driver = driver;
     }
 
-    public void verifyLearningMaterialPageIsDisplayed() {
+    public void verifyLearningMaterialPageIsDisplayed()throws InterruptedException {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(welcomeHeading_id));
         welcomeHeading_id.isDisplayed();
+        Thread.sleep(2000);
     }
-    public void clickWebAutomationAdvanceTab() {
+    public void clickWebAutomationAdvanceTab()throws InterruptedException {
         WebAutomationAdvanceTab_id.click();
+        Thread.sleep(2000);
+
     }
 }
