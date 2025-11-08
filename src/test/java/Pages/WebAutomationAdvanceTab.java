@@ -3,11 +3,6 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class WebAutomationAdvanceTab {
     WebDriver driver;
@@ -23,23 +18,25 @@ public class WebAutomationAdvanceTab {
  @FindBy(id = "shipping-option-express") WebElement shippingoptionexpress_id;
  @FindBy(id = "shipping-option-standard") WebElement shippingoptionstandard_id;
  @FindBy(id = "warranty-option-none") WebElement warrantynone_id;
- @FindBy(id = "warranty-1yr") WebElement warranty1yr_id;
- @FindBy(id = "warranty-2yr") WebElement warranty2yr_id;
+ @FindBy(id = "warranty-option-1yr") WebElement warranty1yr_id;
+ @FindBy(id = "warranty-option-2yr") WebElement warranty2yr_id;
  @FindBy(id = "discount-code") WebElement discountcode_id;
  @FindBy(id = "apply-discount-btn") WebElement applydiscountbtn_id;
  @FindBy(id = "add-to-cart-btn") WebElement addtocartbtn_id;
- @FindBy(id = "purchase-device-btn") WebElement purchasedevicebtn_id;
  @FindBy(id = "inventory-next-btn") WebElement nextbtn_id;
  @FindBy(id = "preview-section-title") WebElement devicepreview_id;
  @FindBy(id = "pricing-summary") WebElement pricingsummary_id;
- @FindBy(id = "discount-code") WebElement discountcodefield_id;
+ @FindBy(id = "review-cart-btn") WebElement reviewcartbutton_id;
+ @FindBy(id = "cart-title") WebElement carttitle_id;
+ @FindBy(id = "confirm-cart-btn") WebElement confirmcartbuttom_id;
+ @FindBy(id = "purchase-device-btn") WebElement purchasedevicebtn_id;
+ @FindBy(id = "view-history-btn") WebElement viewinvoicebutton_id;
 
     public WebAutomationAdvanceTab(WebDriver driver){
         this.driver=driver;
     }
 
     public void verifyInventoryHeaderIsDisplayed() throws InterruptedException{
-        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(inventoryHeader_id));
         inventoryHeader_id.isDisplayed();
         Thread.sleep(1000);
     }
@@ -72,7 +69,6 @@ public class WebAutomationAdvanceTab {
         Thread.sleep(1000);
     }
     public void enterAddress(String address)throws InterruptedException{
-       //new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(address_id));
         address_id.sendKeys(address);
         Thread.sleep(1000);
     }
@@ -96,42 +92,56 @@ public class WebAutomationAdvanceTab {
 
         if (warranty.equalsIgnoreCase("none")) {
             warrantynone_id.click();
-        } else if (warranty.equalsIgnoreCase("1yr")) {
+        } else if (warranty.equals("1yr")) {
             warranty1yr_id.click();
-        } else if (warranty.equalsIgnoreCase("2yr")) {
-            warranty2yr_id.click();
+        } else if (warranty.equals("2yr")) {
+             warranty2yr_id.click();
         } else {
             throw new IllegalArgumentException("Invalid warranty option: " + warranty);
         }
-
-        Thread.sleep(1000);
+ Thread.sleep(2000);
     }
     public void enterDiscountCode(String discountCode)throws InterruptedException{
         discountcode_id.sendKeys(discountCode);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     public void clickApplyDiscountButton()throws InterruptedException {
         applydiscountbtn_id.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     public void verifyPreviewPageIsDisplayed()throws InterruptedException{
-        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(devicepreview_id));
         devicepreview_id.isDisplayed();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     public void verifyPricingSummaryIsDisplayed()throws InterruptedException{
-       // new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(pricingsummary_id));
         pricingsummary_id.isDisplayed();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     public void clickAddToCartButton()throws InterruptedException{
         addtocartbtn_id.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+    }
+    public void clickReviewCartButton()throws InterruptedException{
+        reviewcartbutton_id.click();
+        Thread.sleep(2000);
+    }
+    public void verifyCartItemsIsDisplayed()throws InterruptedException{
+        carttitle_id.isDisplayed();
+        Thread.sleep(2000);
+    }
+    public void clickConfirmCartButton()throws InterruptedException{
+        confirmcartbuttom_id.click();
+        Thread.sleep(2000);
     }
 
     public void clickPurchaseButton()throws InterruptedException{
         purchasedevicebtn_id.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+    }
+
+    public void clickViewInvoiceButton()throws InterruptedException{
+        viewinvoicebutton_id.click();
+        Thread.sleep(2000);
     }
 
 }

@@ -98,10 +98,10 @@ public class AllTests extends Base {
     public void clickApplyDiscountButtonTest()throws InterruptedException {
         webAutomationAdvanceTab.clickApplyDiscountButton();
     }
-//    @Test(dependsOnMethods = "clickApplyDiscountButtonTest")
-//    public void verifyPreviewPageIsDisplayedTest() throws InterruptedException{
-//        webAutomationAdvanceTab.verifyPreviewPageIsDisplayed();
-//    }
+    @Test(dependsOnMethods = "clickApplyDiscountButtonTest")
+    public void verifyPreviewPageIsDisplayedTest() throws InterruptedException{
+        webAutomationAdvanceTab.verifyPreviewPageIsDisplayed();
+   }
     @Test(dependsOnMethods = "clickApplyDiscountButtonTest")
     public void verifyPricingSummaryIsDisplayedTest() throws InterruptedException{
         webAutomationAdvanceTab.verifyPricingSummaryIsDisplayed();
@@ -149,17 +149,37 @@ public class AllTests extends Base {
     public void selectShippingOptionsDeviceTwoTest()throws InterruptedException {
         webAutomationAdvanceTab.selectShippingOption("standard");
     }
-    @Test(dependsOnMethods = "selectShippingOptionsDeviceTwoTest")
-    public void selectWarrantyOptionsDeviceTwoTest()throws InterruptedException {
-        webAutomationAdvanceTab.selectWarrantyOptions("1yr");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+     @Test(dependsOnMethods = "selectShippingOptionsDeviceTwoTest")
+    public void selectWarrantyOptionstwoTest()throws InterruptedException {
+        webAutomationAdvanceTab.selectWarrantyOptions("2yr");
     }
-    @Test(dependsOnMethods = "selectShippingOptionsDeviceTwoTest")
+
+
+   @Test(dependsOnMethods = "selectShippingOptionsDeviceTwoTest")
     public void clickAddToCartButtonDeviceTwoTest()throws InterruptedException {
         webAutomationAdvanceTab.clickAddToCartButton();
     }
-
+    @Test(dependsOnMethods = "clickAddToCartButtonDeviceTwoTest")
+    public void clickReviewCartButtonTest()throws InterruptedException {
+        webAutomationAdvanceTab.clickReviewCartButton();
+    }
+    @Test(dependsOnMethods = "clickReviewCartButtonTest")
+    public void verifyCartItemsIsDisplayedTest()throws InterruptedException {
+        webAutomationAdvanceTab.verifyCartItemsIsDisplayed();
+    }
+    @Test(dependsOnMethods = "verifyCartItemsIsDisplayedTest")
+    public void clickConfirmCartButtonTest()throws InterruptedException {
+        webAutomationAdvanceTab.clickConfirmCartButton();
+    }
+    @Test(dependsOnMethods = "clickConfirmCartButtonTest")
+    public void clickPurchaseButtonTest()throws InterruptedException {
+        webAutomationAdvanceTab.clickPurchaseButton();
+    }
+    @Test(dependsOnMethods = "clickPurchaseButtonTest")
+    public void clickViewInvoiceButtonTest()throws InterruptedException {
+        webAutomationAdvanceTab.clickViewInvoiceButton();
+    }
 //   @AfterTest
 //    public void closeBrowser() {
 //        driver.quit();
