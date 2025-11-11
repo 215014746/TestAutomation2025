@@ -2,6 +2,7 @@ package Tests;
 
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 @Test
 public class AllTests extends Base {
@@ -180,8 +181,8 @@ public class AllTests extends Base {
     public void clickViewInvoiceButtonTest()throws InterruptedException {
         webAutomationAdvanceTab.clickViewInvoiceButton();
     }
-//   @AfterTest
-//    public void closeBrowser() {
-//        driver.quit();
-//    }
+   @AfterTest
+    public void closeBrowser() {
+        driver.quit();
+    }
 }
