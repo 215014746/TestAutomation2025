@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 Reports/
+Screenshots/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

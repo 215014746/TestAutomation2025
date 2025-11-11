@@ -1,6 +1,7 @@
 package Utils;
 
 import com.google.common.io.Files;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,8 @@ public class TakeScreenshots {
         File destination = new File(screenshotDir + screenshortName + ".png");
 
         try {
-             Files.copy(src, destination);
+            // Files.copy(src, destination);
+            FileUtils.copyFile(src, destination);
         } catch (Exception e) {
             e.printStackTrace();
         }
