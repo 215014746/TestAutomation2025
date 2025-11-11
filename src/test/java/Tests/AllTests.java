@@ -15,12 +15,14 @@ public class AllTests extends Base {
     @Test(dependsOnMethods = "verifyHomePageIsDisplayedTest")
     public void clickLearningMaterialTest()throws InterruptedException {
         homePage.clickLearningMaterial();
+        takeScreenshots.takesSnapshot(driver, "LearningMaterialPage");
     }
 
     //LoginPage
     @Test(dependsOnMethods = "clickLearningMaterialTest")
     public void verifyLoginpageIsDisplayedTest()throws InterruptedException {
         loginPage.verifyLoginpageIsDisplayed();
+        //takeScreenshots.takesSnapshot("LoginPage");
     }
 
     @Test(dependsOnMethods = "verifyLoginpageIsDisplayedTest")
