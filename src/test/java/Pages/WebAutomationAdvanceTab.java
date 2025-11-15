@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import java.util.List;
+
 
 public class WebAutomationAdvanceTab {
     WebDriver driver;
@@ -31,6 +33,8 @@ public class WebAutomationAdvanceTab {
  @FindBy(id = "confirm-cart-btn") WebElement confirmcartbuttom_id;
  @FindBy(id = "purchase-device-btn") WebElement purchasedevicebtn_id;
  @FindBy(id = "view-history-btn") WebElement viewinvoicebutton_id;
+ @FindBy(xpath = "//button[contains(text(),'View')]") List<WebElement> viewButtons;
+ @FindBy(xpath = "//button[contains(text(),'Save as PDF')]") List<WebElement> downloadButtons;
 
     public WebAutomationAdvanceTab(WebDriver driver){
         this.driver=driver;
@@ -95,52 +99,62 @@ public class WebAutomationAdvanceTab {
         } else if (warranty.equals("1yr")) {
             warranty1yr_id.click();
         } else if (warranty.equals("2yr")) {
+            Thread.sleep(2000);
              warranty2yr_id.click();
         } else {
             throw new IllegalArgumentException("Invalid warranty option: " + warranty);
         }
- Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void enterDiscountCode(String discountCode)throws InterruptedException{
         discountcode_id.sendKeys(discountCode);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void clickApplyDiscountButton()throws InterruptedException {
         applydiscountbtn_id.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void verifyPreviewPageIsDisplayed()throws InterruptedException{
         devicepreview_id.isDisplayed();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void verifyPricingSummaryIsDisplayed()throws InterruptedException{
         pricingsummary_id.isDisplayed();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void clickAddToCartButton()throws InterruptedException{
         addtocartbtn_id.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void clickReviewCartButton()throws InterruptedException{
         reviewcartbutton_id.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void verifyCartItemsIsDisplayed()throws InterruptedException{
         carttitle_id.isDisplayed();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
     public void clickConfirmCartButton()throws InterruptedException{
         confirmcartbuttom_id.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void clickPurchaseButton()throws InterruptedException{
         purchasedevicebtn_id.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     public void clickViewInvoiceButton()throws InterruptedException{
         viewinvoicebutton_id.click();
+        Thread.sleep(1000);
+    }
+    public void clickLatestInvoiceView() throws InterruptedException{
+        viewButtons.get(0).click();
+        Thread.sleep(1000);
+    }
+
+    public void clickLatestInvoiceDownload()throws InterruptedException {
+        downloadButtons.get(0).click();
         Thread.sleep(2000);
     }
 

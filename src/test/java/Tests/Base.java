@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.HomePage;
-import Pages.LearningMaterialPage;
-import Pages.LoginPage;
-import Pages.WebAutomationAdvanceTab;
+import Pages.*;
 import Utils.BrowserFactory;
 import Utils.TakeScreenshots;
 import org.openqa.selenium.WebDriver;
@@ -17,5 +14,6 @@ public class Base {
     LearningMaterialPage learningMaterialPage = PageFactory.initElements(driver, LearningMaterialPage.class);
     WebAutomationAdvanceTab webAutomationAdvanceTab = PageFactory.initElements(driver, WebAutomationAdvanceTab.class);
     TakeScreenshots takeScreenshots = new TakeScreenshots();
+    SignupPage SignupPage = PageFactory.initElements(driver, SignupPage.class);
 
 }

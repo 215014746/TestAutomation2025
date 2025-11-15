@@ -16,6 +16,7 @@ public class LoginPage {
     @FindBy(id = "login-email") WebElement email_id;
     @FindBy(id = "login-password") WebElement password_id;
     @FindBy(id = "login-submit") WebElement loginsubmit_id;
+    @FindBy(id = "logout-btn") WebElement logoutbtn_id;
 
     public  LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -26,6 +27,7 @@ public class LoginPage {
         Thread.sleep(2000);
     }
     public void enterEmail(String email)throws InterruptedException{
+        email_id.clear();
         email_id.sendKeys(email);
         Thread.sleep(2000);
     }
@@ -35,6 +37,10 @@ public class LoginPage {
     }
     public void loginButtonSubmit()throws InterruptedException{
         loginsubmit_id.click();
+        Thread.sleep(2000);
+    }
+    public void logoutButtonClick()throws InterruptedException{
+        logoutbtn_id.click();
         Thread.sleep(2000);
     }
 
