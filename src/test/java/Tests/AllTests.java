@@ -120,7 +120,7 @@ public class AllTests extends Base {
     }
     @Test(priority = 5)
     public void extraSpacesInCredentialsTest() throws InterruptedException{
-        loginPage.enterEmail("  zee2025@ndosi.com  ");
+        loginPage.enterEmail("  " + readFromFile.username + " ");
         loginPage.enterPassword("  Zee@2025  ");
         loginPage.loginButtonSubmit();
         Thread.sleep(500);

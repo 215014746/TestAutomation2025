@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.*;
 import Utils.BrowserFactory;
+import Utils.ReadFromFile;
 import Utils.TakeScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -15,5 +16,6 @@ public class Base {
     WebAutomationAdvanceTab webAutomationAdvanceTab = PageFactory.initElements(driver, WebAutomationAdvanceTab.class);
     TakeScreenshots takeScreenshots = new TakeScreenshots();
     SignupPage SignupPage = PageFactory.initElements(driver, SignupPage.class);
+    ReadFromFile readFromFile = new ReadFromFile();
 
 }
