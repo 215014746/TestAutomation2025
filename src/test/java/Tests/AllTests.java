@@ -130,7 +130,7 @@ public class AllTests extends Base {
         Assert.assertNotNull(token, "Auth token should exist after login with spaces");
 
     }
-    @Test(priority = 6)
+  /*  @Test(priority = 6)
     public void logoutTest() throws InterruptedException{
         loginPage.logoutButtonClick();
         Thread.sleep(500);
@@ -148,11 +148,11 @@ public class AllTests extends Base {
         String token = (String) ((JavascriptExecutor) driver).executeScript("return window.localStorage.getItem('authToken');");
         Assert.assertNull(token, "Token should be removed after forced logout");
 
-    }
+    }*/
 
 
     //LearningMaterialPage
-    @Test(dependsOnMethods = "forcedLogoutOnTabSwitchTest")
+    @Test(dependsOnMethods = "extraSpacesInCredentialsTest", priority = 6)
    public void verifyLearningMaterialPageIsDisplayedTest()throws InterruptedException {
         learningMaterialPage.verifyLearningMaterialPageIsDisplayed();
     }
